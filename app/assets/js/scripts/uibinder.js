@@ -61,7 +61,7 @@ function getCurrentView(){
 async function showMainUI(data){
 
     if(!isDev){
-        loggerAutoUpdater.info('Initializing..')
+        loggerAutoUpdater.info('初期化中..')
         ipcRenderer.send('autoUpdateAction', 'initAutoUpdater', ConfigManager.getAllowPrerelease())
     }
 
@@ -105,9 +105,9 @@ async function showMainUI(data){
         
     }, 750)
     // Disable tabbing to the news container.
-    initNews().then(() => {
-        $('#newsContainer *').attr('tabindex', '-1')
-    })
+//    initNews().then(() => {
+//        $('#newsContainer *').attr('tabindex', '-1')
+//    })
 }
 
 function showFatalStartupError(){
@@ -136,7 +136,7 @@ function showFatalStartupError(){
 function onDistroRefresh(data){
     updateSelectedServer(data.getServerById(ConfigManager.getSelectedServer()))
     refreshServerStatus()
-    initNews()
+//    initNews()
     syncModConfigurations(data)
     ensureJavaSettings(data)
 }

@@ -135,6 +135,10 @@ document.getElementById('settingsMediaButton').onclick = async e => {
     switchView(getCurrentView(), VIEWS.settings)
 }
 
+document.getElementById('discordMediaButton').onclick = async e => {
+    shell.openExternal('https://discord.gg/UCFEAvbbNs')
+}
+
 // Bind avatar overlay button.
 document.getElementById('avatarOverlay').onclick = async e => {
     await prepareSettings()
@@ -708,24 +712,24 @@ function slide_(up){
 }
 
 // Bind news button.
-document.getElementById('newsButton').onclick = () => {
-    // Toggle tabbing.
-    if(newsActive){
-        $('#landingContainer *').removeAttr('tabindex')
-        $('#newsContainer *').attr('tabindex', '-1')
-    } else {
-        $('#landingContainer *').attr('tabindex', '-1')
-        $('#newsContainer, #newsContainer *, #lower, #lower #center *').removeAttr('tabindex')
-        if(newsAlertShown){
-            $('#newsButtonAlert').fadeOut(2000)
-            newsAlertShown = false
-            ConfigManager.setNewsCacheDismissed(true)
-            ConfigManager.save()
-        }
-    }
-    slide_(!newsActive)
-    newsActive = !newsActive
-}
+//document.getElementById('newsButton').onclick = () => {
+//    // Toggle tabbing.
+//    if(newsActive){
+//        $('#landingContainer *').removeAttr('tabindex')
+//        $('#newsContainer *').attr('tabindex', '-1')
+//    } else {
+//        $('#landingContainer *').attr('tabindex', '-1')
+//        $('#newsContainer, #newsContainer *, #lower, #lower #center *').removeAttr('tabindex')
+//        if(newsAlertShown){
+//            $('#newsButtonAlert').fadeOut(2000)
+//            newsAlertShown = false
+//            ConfigManager.setNewsCacheDismissed(true)
+//            ConfigManager.save()
+//        }
+//    }
+//    slide_(!newsActive)
+//    newsActive = !newsActive
+//}
 
 // Array to store article meta.
 let newsArr = null
@@ -762,7 +766,7 @@ function setNewsLoading(val){
 // Bind retry button.
 newsErrorRetry.onclick = () => {
     $('#newsErrorFailed').fadeOut(250, () => {
-        initNews()
+//        initNews()
         $('#newsErrorLoading').fadeIn(250)
     })
 }

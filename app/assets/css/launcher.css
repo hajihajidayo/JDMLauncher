@@ -78,7 +78,7 @@ body, button {
 /* Flexbox to wrap the main frame content. */
 #frameMain {
     display: flex;
-    height: 20px
+    height: 40px
 }
 
 /* Undraggable region on the left and right of the frame. */
@@ -106,7 +106,7 @@ body, button {
 
 /* Frame logo (windows only). */
 #frameTitleDock {
-    padding: 0px 10px;
+    padding: 10px 10px;
 }
 #frameTitleText {
     font-size: 14px;
@@ -120,7 +120,7 @@ body, button {
     position: relative;
     top: -2px;
     right: -2px;
-    height: 22px;
+    height: 42px;
 }
 #frameButtonDockWin > .frameButton:not(:first-child) {
     margin-left: -4px;
@@ -138,7 +138,7 @@ body, button {
 .frameButton {
     background: none;
     border: none;
-    height: 22px;
+    height: 42px;
     width: 39px;
     cursor: pointer;
 }
@@ -862,7 +862,7 @@ body, button {
 
 /*
 #login_filter {
-    height: calc(100% - 22px);
+    height: calc(100% - 42px);
     width: 100%;
     z-index: 9000;
     position: absolute;
@@ -979,6 +979,11 @@ body, button {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.loginOptionsMainContentTips {
+    font-size: 0.8em;
+    margin-bottom: 10px;
 }
 
 .loginOptionActions {
@@ -2481,24 +2486,22 @@ input:checked + .toggleSwitchSlider:before {
 /* Lower content container. */
 #landingContainer > #lower {
     height: 23%;
-    display: flex;
+    position: relative;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
 #landingContainer > #lower > #left {
-    position: relative;
+    position: absolute;
     transition: top 2s ease;
-    top: 0px;
+    left: 70px;
+    bottom: 40px;
     height: 100%;
     width: 33%;
-    display: inline-flex;
-    justify-content: center;
 }
 #landingContainer > #lower > #left #content {
     position: relative;
-    top: 25px;
-    display: inline-flex;
+    display: flex;
+    flex-direction: column;
     line-height: 24px;
-    left: 50px;
 }
 #landingContainer > #lower > #center {
     position: relative;
@@ -2516,12 +2519,12 @@ input:checked + .toggleSwitchSlider:before {
     top: 10px;
 }
 #landingContainer > #lower > #right {
-    position: relative;
+    position: absolute;
     transition: top 2s ease;
-    top: 0px;
+    right: 70px;
+    bottom: 70px;
     height: 100%;
     width: 33%;
-    display: inline-flex;
 }
 
 /*******************************************************************************
@@ -2956,7 +2959,7 @@ input:checked + .toggleSwitchSlider:before {
     position: relative;
     top: 50px;
     align-items: flex-start;
-    height: calc(100% - 50px);
+    height: calc(100% - 42px);
 }
 
 /* Right hand user content container. */
@@ -3013,7 +3016,7 @@ input:checked + .toggleSwitchSlider:before {
 
 /* User profile name text. */
 #user_text {
-    font-size: 12px;
+    font-size: 20px;
     min-width: 135px;
     font-weight: 900;
     letter-spacing: 1px;
@@ -3052,9 +3055,9 @@ input:checked + .toggleSwitchSlider:before {
 /* Divider bar between the external and internal icons. */
 .mediaDivider {
     height: 1px;
-    width: 14px;
+    width: 30px;
     background: rgb(255, 255, 255);
-    margin: 10px 0px;
+    margin: 30px 0px;
 }
 
 /* Social media icon shared styles. */
@@ -3063,13 +3066,13 @@ input:checked + .toggleSwitchSlider:before {
     height: 12px;
     transition: 0.25s ease;
     cursor: pointer;
-    height: 12px;
-    width: 25px;
+    height: 40px;
+    width: 34px;
 }
 .mediaSVG:hover,
 .mediaURL:focus .mediaSVG,
 .mediaSVG:active {
-    height: 20px;
+    height: 30px;
 }
 
 /* Social media URL shared styles. */
@@ -3094,7 +3097,7 @@ input:checked + .toggleSwitchSlider:before {
 /* Settings icon colors. */
 #settingsSVG {
     stroke: #ffffff;
-    height: 15px;
+    height: 30px;
 }
 .mediaButton:hover #settingsSVG,
 .mediaButton:focus #settingsSVG,
@@ -3106,8 +3109,8 @@ input:checked + .toggleSwitchSlider:before {
 #settingsTooltip {
     visibility: hidden;
     opacity: 0;
-    width: 75px;
-    height: 20px;
+    min-width: 75px;
+    min-height: 20px;
     background-color: rgba(0, 0, 0, 0.75);
     text-align: center;
     border-radius: 4px;
@@ -3115,7 +3118,7 @@ input:checked + .toggleSwitchSlider:before {
     z-index: 1;
     right: 130%;
     font-size: 12px;
-    line-height: 20px;
+    line-height: 24px;
     transition: visibility 0s linear 0.25s, opacity 0.25s ease;
 }
 #settingsTooltip::after {
@@ -3181,7 +3184,7 @@ input:checked + .toggleSwitchSlider:before {
 
 /* Style for a general label on the bottom of the landing view. */
 .bot_label {
-    font-size: 9px;
+    font-size: 16px;
     letter-spacing: 1px;
     font-weight: bold;
     text-shadow: 0px 0px 0px #bebcbb;
@@ -3194,6 +3197,13 @@ input:checked + .toggleSwitchSlider:before {
     background: rgba(107, 105, 105, 0.7);
     margin-left: 20px;
     margin-right: 20px;
+}
+
+.horizontal_divider {
+    height: 2px;
+    width: 100%;
+    background: rgba(107, 105, 105, 0.7);
+    margin: 20px 0;
 }
 
 /* * *
@@ -3209,7 +3219,7 @@ input:checked + .toggleSwitchSlider:before {
 /* Span which displays the player count of the selected server. */
 #player_count {
     color: #949494;
-    font-size: 8px;
+    font-size: 18px;
     font-weight: 900;
     text-shadow: 0px 0px 20px #949494;
     margin-left: 10px;
@@ -3389,20 +3399,21 @@ input:checked + .toggleSwitchSlider:before {
 /* Main launch content container. */
 #landingContainer > #lower > #right #launch_content {
     position: relative;
-    top: 25px;
-    display: inline-flex;
+    display: flex;
+    flex-direction: column;
 }
 
 /* The launch button. */
 #launch_button {
-    background: none;
-    border: none;
+    background: rgb(200,200,200, 0.5);
+    border: 0px;
+    border-radius: 3px;
     cursor: pointer;
     font-weight: 900;
     letter-spacing: 2px;
     text-shadow: 0px 0px 0px #bebcbb;
     font-size: 20px;
-    padding: 0px;
+    padding: 10px;
     transition: 0.25s ease;
     outline: none;
 }
@@ -3504,12 +3515,12 @@ input:checked + .toggleSwitchSlider:before {
 #overlayContainer {
     position: absolute;
     z-index: 500;
-    top: 22px;
+    top: 42px;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: calc(100% - 22px);
+    height: calc(100% - 42px);
     background: rgba(0, 0, 0, 0.50);
 }
 
@@ -3918,7 +3929,7 @@ input:checked + .toggleSwitchSlider:before {
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: calc(100% - 22px);
+    height: calc(100% - 42px);
 }
 
 /* Loading content container. */
