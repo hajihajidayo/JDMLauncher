@@ -983,7 +983,20 @@ body, button {
 
 .loginOptionsMainContentTips {
     font-size: 0.8em;
-    margin-bottom: 10px;
+    margin-bottom: 22px;
+    text-align: center;
+}
+
+.loginOptionsMainContentTipsUnder {
+    color: #aaa;
+    font-size: 0.6em;
+    margin-top: 22px;
+    text-align: center;
+}
+
+.loginOptionsMainContentTipsUnder a {
+    color: #aaa;
+    text-decoration: underline;
 }
 
 .loginOptionActions {
